@@ -20,5 +20,6 @@ int main() {
 
     struct foo *apples = makeStruct("apples", rand() % 20 + 5 + (rand() % 99)/ 100.0, rand() % 5 + 5 + (rand() % 99) / 100.0);
     printStruct(apples);
+    free(apples);
     return 0;
 }
