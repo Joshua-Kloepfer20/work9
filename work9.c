@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-struct foo {char *food; float price; float weight;};
+#include <string.h>
+struct foo {char food[100]; float price; float weight;};
 
 void printStruct(struct foo * x) {
     printf("%s cost %0.2f and weigh %0.2f\n", x->food, x->price, x->weight);
@@ -9,7 +10,7 @@ void printStruct(struct foo * x) {
 
 struct foo * makeStruct(char *food, float price, float weight) {
     struct foo *x = malloc(sizeof(struct foo));
-    x->food = food;
+    strcpy(x->food, food);
     x->price = price;
     x->weight = weight;
     return x;
